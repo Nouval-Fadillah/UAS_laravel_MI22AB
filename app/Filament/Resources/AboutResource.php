@@ -44,7 +44,8 @@ class AboutResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('bio'),                  
+                Tables\Columns\TextColumn::make('kelas'),
+                Tables\Columns\TextColumn::make('nim'),                  
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

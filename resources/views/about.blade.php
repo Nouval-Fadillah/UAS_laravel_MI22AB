@@ -134,7 +134,7 @@
     </nav>
 
     @foreach ($abouts as $about)
-    <article class="rounded-xl border-2 border-gray-100 bg-white">
+    {{-- <article class="rounded-xl border-2 border-gray-100 bg-white">
         <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
             <a href="#" class="block shrink-0">
                 <img class="hover:grow hover:shadow-lg h-30" src="{{ asset('storage/' . $about->image) }}"
@@ -165,7 +165,41 @@
                 <span class="text-[10px] font-medium sm:text-xs">Solved!</span>
             </strong>
         </div>
+    </article> --}}
+    <article class="rounded-xl border-2 border-gray-100 bg-white shadow-md overflow-hidden">
+        <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
+            <!-- Gambar -->
+            <a href="#" class="block shrink-0">
+                <img class="w-48 h-48 sm:w-56 sm:h-56 rounded-lg object-cover" 
+                     src="{{ asset('storage/' . $about->image) }}" 
+                     alt="{{ $about->nama }}">
+            </a>
+            
+            <!-- Informasi -->
+            <div>
+                <h3 class="font-semibold text-2xl text-gray-900">
+                    {{ $about->nama }}
+                </h3>
+                <p class="line-clamp-2 text-sm text-gray-700 mt-1">
+                    {{ $about->kelas }}
+                </p>
+                <p class="line-clamp-2 text-sm text-gray-700 mt-1">
+                    {{ $about->nim }}
+                </p>
+            </div>
+        </div>
+    
+        <!-- Status Label -->
+        <div class="flex justify-end">
+            <strong class="inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-green-600 px-3 py-1.5 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+                </svg>
+                <span class="text-xs font-medium">Solved!</span>
+            </strong>
+        </div>
     </article>
+    
     @endforeach
     
 
