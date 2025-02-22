@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->longText('kelas');
-            $table->longText('nim');
+            $table->string('nim');
+            $table->string('kelas');
+            $table->longText('kontribusi');
+            $table->longText('github');
             $table->string('image');
             $table->timestamps();
         });

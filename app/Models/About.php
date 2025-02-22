@@ -9,10 +9,12 @@ class About extends Model
 {
     use HasFactory;
 
-    protected $fillable =[
+    protected $fillable = [
         'nama',
-        'kelas',
         'nim',
+        'kelas',
+        'kontribusi',
+        'github',
         'image'
     ];
 }

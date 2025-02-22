@@ -110,7 +110,7 @@
 
             <div class="order-2 md:order-3 flex items-center" id="nav-content">
 
-                <a class="inline-block no-underline hover:text-black" href="#">
+                <a class="inline-block no-underline hover:text-black" href="{{ route('filament.admin.auth.login') }}">
                     <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24">
                         <circle fill="none" cx="12" cy="7" r="3" />
@@ -119,22 +119,13 @@
                     </svg>
                 </a>
 
-                <a class="pl-3 inline-block no-underline hover:text-black" href="#">
-                    <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" viewBox="0 0 24 24">
-                        <path
-                            d="M21,7H7.462L5.91,3.586C5.748,3.229,5.392,3,5,3H2v2h2.356L9.09,15.414C9.252,15.771,9.608,16,10,16h8 c0.4,0,0.762-0.238,0.919-0.606l3-7c0.133-0.309,0.101-0.663-0.084-0.944C21.649,7.169,21.336,7,21,7z M17.341,14h-6.697L8.371,9 h11.112L17.341,14z" />
-                        <circle cx="10.5" cy="18.5" r="1.5" />
-                        <circle cx="17.5" cy="18.5" r="1.5" />
-                    </svg>
-                </a>
 
             </div>
         </div>
     </nav>
 
     @foreach ($abouts as $about)
-    {{-- <article class="rounded-xl border-2 border-gray-100 bg-white">
+    <!-- {{-- <article class="rounded-xl border-2 border-gray-100 bg-white">
         <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
             <a href="#" class="block shrink-0">
                 <img class="hover:grow hover:shadow-lg h-30" src="{{ asset('storage/' . $about->image) }}"
@@ -165,30 +156,37 @@
                 <span class="text-[10px] font-medium sm:text-xs">Solved!</span>
             </strong>
         </div>
-    </article> --}}
+    </article> --}} -->
     <article class="rounded-xl border-2 border-gray-100 bg-white shadow-md overflow-hidden">
         <div class="flex items-start gap-4 p-4 sm:p-6 lg:p-8">
             <!-- Gambar -->
             <a href="#" class="block shrink-0">
-                <img class="w-48 h-48 sm:w-56 sm:h-56 rounded-lg object-cover" 
-                     src="{{ asset('storage/' . $about->image) }}" 
-                     alt="{{ $about->nama }}">
+                <img class="w-48 h-48 sm:w-56 sm:h-56 rounded-lg object-cover"
+                    src="{{ asset('storage/' . $about->image) }}"
+                    alt="{{ $about->nama }}">
             </a>
-            
+
             <!-- Informasi -->
             <div>
                 <h3 class="font-semibold text-2xl text-gray-900">
+                    {{ $about->nim }}
+                </h3>
+                <h3 class="font-semibold text-2xl text-gray-900">
                     {{ $about->nama }}
                 </h3>
-                <p class="line-clamp-2 text-sm text-gray-700 mt-1">
+                <h3 class="font-semibold text-2xl text-gray-900">
                     {{ $about->kelas }}
+                </h3>
+                <p class="line-clamp-2 text-sm text-gray-700 mt-1">
+                    {{ $about->kontribusi }}
                 </p>
                 <p class="line-clamp-2 text-sm text-gray-700 mt-1">
-                    {{ $about->nim }}
+                    {{ $about->github }}
                 </p>
+
             </div>
         </div>
-    
+
         <!-- Status Label -->
         <div class="flex justify-end">
             <strong class="inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-green-600 px-3 py-1.5 text-white">
@@ -199,14 +197,14 @@
             </strong>
         </div>
     </article>
-    
+
     @endforeach
-    
+
 
 
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
         <div class="container flex px-3 py-8 ">
-           
+
         </div>
     </footer>
 

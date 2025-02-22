@@ -30,7 +30,7 @@ class ProdukResource extends Resource
         return $form
             ->schema([
                 //
-                Fieldset::make('Additional')
+                Fieldset::make('Input')
                     ->schema([
                         Forms\Components\TextInput::make('nama_produk')
                             ->required()

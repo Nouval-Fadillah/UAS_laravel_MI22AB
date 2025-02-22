@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\Fieldset;
 
 class AboutResource extends Resource
 {
@@ -23,18 +24,28 @@ class AboutResource extends Resource
     {
         return $form
             ->schema([
+
+                Fieldset::make('Data diri')
+                ->schema([
                 Forms\Components\TextInput::make('nama')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('kelas')
+                Forms\Components\TextInput::make('kelas')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('nim')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('kontribusi')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('nim')
+                Forms\Components\TextInput::make('github')
                     ->required()
-                    ->columnSpanFull(),
+                    ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
+                ])
             ]);
     }
 
@@ -45,7 +56,9 @@ class AboutResource extends Resource
                 Tables\Columns\TextColumn::make('nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('kelas'),
-                Tables\Columns\TextColumn::make('nim'),                  
+                Tables\Columns\TextColumn::make('nim'),
+                Tables\Columns\TextColumn::make('kontribusi'),
+                Tables\Columns\TextColumn::make('github'),
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

@@ -57,7 +57,7 @@ class LoginCustom extends BaseLogin
     {
         return [
             Action::make('login')
-                ->label(__('Login'))
+                ->label(__('Sign in'))
                 ->submit('authenticate'),
                 
             Action::make('back')
