@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Models\About;
 use App\Models\Produk;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/utama', function () {
+Route::get('/', function () {
     return view('utama', [
         'products' => Produk::all()
     ]);
@@ -25,12 +26,12 @@ Route::get('/utama', function () {
 
 Route::get('/about', function () {
     return view('about',[
-        'users' => User::all()
+        'abouts' => About::all()
     ]);
 })->name('about');
 
 
 // Route::get('/', [FrontController::class, 'index'])->name('front.index');
 
-Route::get('/browse/{kategori}', [FrontController::class, 'kategori'])->name('front.kategori');
+// Route::get('/browse/{kategori}', [FrontController::class, 'kategori'])->name('front.kategori');
 
